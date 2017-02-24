@@ -12,7 +12,6 @@ namespace Youshido\GraphQLExtension\Type;
 use Youshido\GraphQL\Config\Object\ObjectTypeConfig;
 use Youshido\GraphQL\Type\Object\AbstractObjectType;
 use Youshido\GraphQL\Type\Scalar\DateTimeType;
-use Youshido\GraphQL\Type\Scalar\DateTimeTzType;
 use Youshido\GraphQL\Type\Scalar\IdType;
 use Youshido\GraphQL\Type\Scalar\IntType;
 use Youshido\GraphQL\Type\Scalar\StringType;

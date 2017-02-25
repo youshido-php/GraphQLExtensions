@@ -13,6 +13,7 @@ use Youshido\GraphQL\Config\Object\ObjectTypeConfig;
 use Youshido\GraphQL\Type\AbstractType;
 use Youshido\GraphQL\Type\ListType\ListType;
 use Youshido\GraphQL\Type\Object\AbstractObjectType;
+use Youshido\GraphQL\Type\Object\ObjectType;
 use Youshido\GraphQL\Type\Scalar\IntType;
 
 class BatchResultType extends AbstractObjectType
@@ -31,11 +32,14 @@ class BatchResultType extends AbstractObjectType
     public function build($config)
     {
         $config->addFields([
-            'batchInfo' => [
-                'offset'     => new IntType(),
-                'limit'      => new IntType(),
-                'totalCount' => new IntType(),
-            ],
+            'batchInfo' => new ObjectType([
+                'name' => 'BatchInfoResult',
+                'fields' => [
+                    'offset'     => new IntType(),
+                    'limit'      => new IntType(),
+                    'totalCount' => new IntType(),
+                ],
+            ]),
             'items'     => new ListType($this->listItemType),
         ]);
     }

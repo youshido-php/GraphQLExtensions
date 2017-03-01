@@ -12,7 +12,7 @@ use Youshido\GraphQL\Config\Object\InputObjectTypeConfig;
 use Youshido\GraphQL\Type\InputObject\AbstractInputObjectType;
 use Youshido\GraphQL\Type\Scalar\IntType;
 
-class BatchParamsType extends AbstractInputObjectType
+class PagingParamsType extends AbstractInputObjectType
 {
     public function build($config)
     {

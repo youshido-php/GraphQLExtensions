@@ -10,14 +10,14 @@ namespace Youshido\GraphQLExtension\Tests\Type;
 
 
 use Youshido\GraphQL\Type\Scalar\IntType;
-use Youshido\GraphQLExtension\Type\BatchResultType;
+use Youshido\GraphQLExtension\Type\PaginatedResultType;
 
 class BatchTest extends \PHPUnit_Framework_TestCase
 {
 
     public function testType()
     {
-        $type = new BatchResultType(new IntType());
+        $type = new PaginatedResultType(new IntType());
         $this->assertEquals('BatchIntResult', $type->getName());
     }
 

@@ -37,12 +37,10 @@ class CursorResultType extends AbstractObjectType
             'pageInfo' => [
                 'type'        => new NonNullType(new PageInfoType()),
                 'description' => 'Information to aid in pagination.',
-                'resolve'     => [__CLASS__, 'getPageInfo'],
             ],
             'edges'    => [
                 'type'        => new ListType(Connection::edgeDefinition($this->edgeType)),
                 'description' => 'A list of edges.',
-                'resolve'     => [__CLASS__, 'getEdges'],
             ]
         ]);
     }

@@ -16,7 +16,7 @@ use Youshido\GraphQL\Type\Object\AbstractObjectType;
 use Youshido\GraphQL\Type\Object\ObjectType;
 use Youshido\GraphQL\Type\Scalar\IntType;
 
-class BatchResultType extends AbstractObjectType
+class PaginatedResultType extends AbstractObjectType
 {
     private $listItemType;
 
@@ -32,15 +32,8 @@ class BatchResultType extends AbstractObjectType
     public function build($config)
     {
         $config->addFields([
-            'batchInfo' => new ObjectType([
-                'name' => 'BatchInfoResult',
-                'fields' => [
-                    'offset'     => new IntType(),
-                    'limit'      => new IntType(),
-                    'totalCount' => new IntType(),
-                ],
-            ]),
-            'items'     => new ListType($this->listItemType),
+            'pagingInfo' => new PagingInfoType(),
+            'items'      => new ListType($this->listItemType),
         ]);
     }
 
